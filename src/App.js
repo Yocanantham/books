@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import BookCreate from "./components/BookCreate";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [booksList, setbooksList] = useState([]);
+    const createBook = (title) => {
+        // console.log("Book created for : ", title);
+
+        setbooksList((prevbooksList) => [
+            ...prevbooksList,
+            { id: 123, title: title },
+        ]);
+    };
+    console.log(booksList);
+
+    return (
+        <div>
+            <div>{booksList.length}</div>
+            <BookCreate onCreate={createBook} />
+        </div>
+    );
 }
 
 export default App;
