@@ -1,0 +1,36 @@
+
+# Get all books using JSON.
+
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+# Add a book using JSON.
+
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "POST Method testing"
+}
+
+###
+
+# Update a book using JSON.
+
+PUT http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "PUT Method - Modified title for my tesing"
+}
+
+###
+
+# Delete a book using JSON.
+
+DELETE http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
